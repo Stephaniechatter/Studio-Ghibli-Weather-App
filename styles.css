@@ -1,0 +1,121 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Start with default background */
+    background: url('my-neighbor-totoro_wide-3985376aa236081bef1c021af72f9bc487e690f6.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.default-bg {
+    background: url('my-neighbor-totoro_wide-3985376aa236081bef1c021af72f9bc487e690f6.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.rain-bg {
+    background: url('d6jfewv-df8ce176-ba9c-491d-b4b4-8080b46cbe95.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.sunny-bg {
+    background: url('giphy.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.snow-bg {
+    background: url('ed890382141eb041ebbca2a580f75764.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.fog-bg {
+    background: url('DhMtPD9.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.cloudy-bg {
+    background: url('Fantasy-Cloud-Sky-Landscape-Studio-Ghibli-Style-69077676-1.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.weather-app {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 20px;
+    text-align: center;
+    width: 400px; /* Increased width for better layout */
+    max-width: 100%; /* Ensure it's responsive */
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.weather-info input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.weather-info button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.weather-info button:hover {
+    background-color: #ffaa00;
+}
+
+#weather-display {
+    margin-top: 20px;
+}
+
+#weather-display img {
+    width: 100px;
+    height: 100px;
+}
+
+#weekly-forecast {
+    margin-top: 20px;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.forecast-day {
+    width: 100%; /* Take full width of the container */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space evenly between items */
+    align-items: center; /* Center items vertically */
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.forecast-day:last-child {
+    border-bottom: none;
+}
+
+.forecast-day img {
+    width: 50px;
+    height: 50px;
+}
+#loading-spinner {
+    display: none; /* Initially hide spinner */
+    margin-bottom: 20px; /* Adjust spacing */
+}
+
+.spinner-img {
+    width: 200px; /* Set width of the spinner image */
+    height: 200px; /* Set height of the spinner image */
+}
