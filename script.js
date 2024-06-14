@@ -71,14 +71,21 @@ function fetchWeeklyForecast(city) {
 
 function displayWeatherData(data) {
     const weatherDisplay = document.getElementById('weather-display');
-    const temp = data.main.temp;
+    let tempCelsius = data.main.temp; // Ensure temp is numeric
+
+    // Convert temp to number if it's not already
+    tempCelsius = typeof tempCelsius === 'number' ? tempCelsius : parseFloat(tempCelsius);
+
+    // Convert Celsius to Fahrenheit and round to nearest whole number
+    const tempFahrenheit = Math.round((tempCelsius * 9/5) + 32);
+
     const description = data.weather[0].description;
     const icon = data.weather[0].icon;
     const iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
 
     weatherDisplay.innerHTML = `
         <h2>${data.name}</h2>
-        <p>${temp}°C</p>
+        <p>${tempFahrenheit}°F</p>
         <p>${description}</p>
         <img src="${iconUrl}" alt="Weather icon">
     `;
@@ -92,7 +99,7 @@ function displayWeeklyForecast(data) {
 
     forecastDays.forEach(day => {
         const date = new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'long' });
-        const temp = day.main.temp;
+        const temp = Math.round(day.main.temp * 9/5 + 32); // Convert Celsius to Fahrenheit and round
         const description = day.weather[0].description;
         const icon = day.weather[0].icon;
         const iconUrl = `http://openweathermap.org/img/wn/${icon}.png`;
@@ -101,7 +108,7 @@ function displayWeeklyForecast(data) {
             <div class="forecast-day">
                 <div>${date}</div>
                 <div><img src="${iconUrl}" alt="Weather icon"></div>
-                <div>${temp}°C</div>
+                <div>${temp}°F</div>
                 <div>${description}</div>
             </div>
         `;
